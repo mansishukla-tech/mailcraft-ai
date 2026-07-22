@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    @apply font-body text-slate-800;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #e2e8f0;
+    border-radius: 999px;
+  }
+
+  .text-shimmer {
+    background: linear-gradient(90deg, #a5b4fc 0%, #f0abfc 25%, #a5b4fc 50%, #f0abfc 75%, #a5b4fc 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 6s linear infinite;
+  }
+}
+
+@keyframes float1 {
+  0% {
+    transform: translate(-50%, 0px);
+  }
+  50% {
+    transform: translate(-50%, 35px);
+  }
+  100% {
+    transform: translate(-50%, 0px);
+  }
+}
+
+@keyframes float2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-30px, -40px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes float3 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(40px, 30px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.orb1 {
+  animation: float1 10s ease-in-out infinite;
+}
+
+.orb2 {
+  animation: float2 14s ease-in-out infinite;
+}
+
+.orb3 {
+  animation: float3 18s ease-in-out infinite;
+} 
