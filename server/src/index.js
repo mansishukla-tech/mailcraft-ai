@@ -14,6 +14,7 @@ console.log("GEMINI VALUE:", process.env.GEMINI_API_KEY)
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const app = express()
+app.set("trust proxy", 1);
 const PORT = process.env.PORT || 8080
 
 app.disable('x-powered-by')
