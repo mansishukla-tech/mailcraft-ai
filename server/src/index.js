@@ -8,6 +8,10 @@ import generateRouter from './routes/generate.js'
 
 dotenv.config()
 
+console.log("DOTENV ERROR:", dotenv.config().error)
+console.log("ENV FILE PATH:", path.resolve(".env"))
+console.log("GEMINI VALUE:", process.env.GEMINI_API_KEY) 
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const app = express()
 const PORT = process.env.PORT || 8080
