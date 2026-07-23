@@ -3,7 +3,7 @@
  * for every piece of text as it arrives, giving a real-time typing effect.
  */
 export async function streamGenerate({ mode, tone, letterType, recipient, inputText, signal, onChunk }) {
-  const res = await fetch('/api/generate', {
+  const res = await fetch('https://mailcraft-ai-production.up.railway.app/api/generate', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ mode, tone, letterType, recipient, inputText }),
