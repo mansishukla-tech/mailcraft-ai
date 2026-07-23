@@ -18,9 +18,14 @@ app.use(express.json({ limit: '100kb' }))
 // CORS is only needed when the Vite dev server (port 5173) calls this
 // server directly. In production the React build is served by this same
 // Express app, so requests are same-origin and CORS is unnecessary.
-if (process.env.NODE_ENV !== 'production') {
-  app.use(cors({ origin: process.env.CLIENT_ORIGIN || 'http://localhost:5173' }))
-}
+app.use(cors({
+  origin: [
+     'https://mailcraft-ai-ahbp.vercel.app',
+    'http://localhost:5173'
+  ],
+  methods: ['GET', 'POST'],
+  credentials: true
+}))
 
 const generateLimiter = rateLimit({
   windowMs: 60 * 1000,
