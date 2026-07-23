@@ -62,6 +62,7 @@ app.use((err, req, res, next) => {
 
 console.log("NODE_ENV:", process.env.NODE_ENV)
 console.log("GEMINI exists:", !!process.env.GEMINI_API_KEY) 
+console.log("TEST =", process.env.TEST)
 
 app.listen(PORT, () => {
   console.log(`MailCraft AI server listening on port ${PORT}`)
