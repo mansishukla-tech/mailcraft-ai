@@ -56,6 +56,9 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Something went wrong on the server.' })
 })
 
+console.log("NODE_ENV:", process.env.NODE_ENV)
+console.log("GEMINI exists:", !!process.env.GEMINI_API_KEY) 
+
 app.listen(PORT, () => {
   console.log(`MailCraft AI server listening on port ${PORT}`)
 })
